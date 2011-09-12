@@ -27,5 +27,11 @@ return array(
 			),
 			'class'		=> 'DOMPDF',
 		),
+		'fpdf'	=> array(
+			'includes'	=> array(
+				'fpdf/fpdf.php',
+			),
+			'class'		=> 'FPDF',
+		),
 	),
 );

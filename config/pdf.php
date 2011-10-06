@@ -33,5 +33,11 @@ return array(
 			),
 			'class'		=> 'FPDF',
 		),
+		'mpdf'	=> array(
+			'includes'	=> array(
+				'mpdf/mpdf.php',
+			),
+			'class'		=> 'mPDF',
+		),
 	),
 );

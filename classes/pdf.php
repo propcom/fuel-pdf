@@ -101,9 +101,24 @@ class Pdf {
 	 * @access	public
 	 * @return	PDF\PDF
 	 */
+	public static function forge($driver = null)
+	{
+		return new static($driver);
+	}
+	
+	/**
+	 * Factory
+	 * 
+	 * Creates new instance of class
+	 * 
+	 * @deprecated
+	 * @access	public
+	 * @return	PDF\PDF
+	 */
 	public static function factory($driver = null)
 	{
-		return new PDF($driver);
+		\Log::warning('This method is deprecated. Please use a forge() instead.', __METHOD__);        
+        return static::forge($name);
 	}
 	
 	/**

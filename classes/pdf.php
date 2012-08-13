@@ -118,7 +118,7 @@ class Pdf {
 	public static function factory($driver = null)
 	{
 		\Log::warning('This method is deprecated. Please use a forge() instead.', __METHOD__);        
-        return static::forge($name);
+        	return static::forge(driver);
 	}
 	
 	/**
@@ -209,11 +209,11 @@ class Pdf {
 		// outside are routed here)
 		if (method_exists($this, $method))
 		{
-			$reflection = new ReflectionMethod($this, $name);
+			$reflection = new ReflectionMethod($this, $method);
 			
 			if ( ! $reflection->isPublic())
 			{
-				throw new \Exception(sprintf('Call to non-public method %s::%s() caught by %s', $name, get_called_class(), get_called_class()));
+				throw new \Exception(sprintf('Call to non-public method %s::%s() caught by %s', $method, get_called_class(), get_called_class()));
 			}
 		}
 		
@@ -289,7 +289,7 @@ class Pdf {
 		}
 		else
 		{
-			throw new \Exception(sprintf('Call to undefined method %s::%s()', get_called_class(), $name));
+			throw new \Exception(sprintf('Call to undefined method %s::%s()', get_called_class(), $method));
 		}
 	}
 }

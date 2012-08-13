@@ -5,7 +5,7 @@
 ##To install this package
 
 * Through OIL:
-	php oil install pdf
+	php oil package install pdf
 
 * Manually:
 	1. [Download](https://github.com/TJS-Technology/fuel-pdf/zipball/master) or [Clone](https://github.com/TJS-Technology/fuel-pdf) the repo.

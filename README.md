@@ -27,7 +27,7 @@ DomPDF example:
 ````php
 <?php
 // Create an instance of the PDF class
-$pdf = \Pdf::forge('dompdf')->init();
+$pdf = \Pdf\Pdf::forge('dompdf')->init();
 ````
 
 TCPDF example:

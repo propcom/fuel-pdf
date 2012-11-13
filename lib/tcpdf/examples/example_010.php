@@ -2,7 +2,7 @@
 //============================================================+
 // File name   : example_010.php
 // Begin       : 2008-03-04
-// Last Update : 2010-08-11
+// Last Update : 2011-04-26
 //
 // Description : Example 010 for TCPDF class
 //               Text on multiple columns
@@ -11,10 +11,10 @@
 //
 // (c) Copyright:
 //               Nicola Asuni
-//               Tecnick.com s.r.l.
-//               Via Della Pace, 11
-//               09044 Quartucciu (CA)
-//               ITALY
+//               Tecnick.com LTD
+//               Manor Coach House, Church Hill
+//               Aldershot, Hants, GU12 4RQ
+//               UK
 //               www.tecnick.com
 //               info@tecnick.com
 //============================================================+
@@ -45,12 +45,10 @@ class MC_TCPDF extends TCPDF {
 	 * @public
 	 */
 	public function PrintChapter($num, $title, $file, $mode=false) {
-		// disable existing columns
-		$this->setEqualColumns();
 		// add a new page
 		$this->AddPage();
-		// reset margins
-		$this->selectColumn();
+		// disable existing columns
+		$this->resetColumns();
 		// print chapter title
 		$this->ChapterTitle($num, $title);
 		// set columns

@@ -118,7 +118,7 @@ class Pdf {
 	public static function factory($driver = null)
 	{
 		\Log::warning('This method is deprecated. Please use a forge() instead.', __METHOD__);        
-        	return static::forge(driver);
+        	return static::forge($driver);
 	}
 	
 	/**

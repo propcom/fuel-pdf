@@ -19,7 +19,7 @@ The PDF class then forwards any functions you call onto the parent class (you ca
 Even if the PDF library you use takes camel-casing, you can just use underscores and this package adapts and changes your function calls so they work with the library.
 
 ##Usage
-To use, firstly call the static method factory() on the PDF class, and provide it one string - the driver to use (by default there are two drivers - dompdf and tcpdf).
+To use, firstly call the static method forge() on the PDF class, and provide it one string - the driver to use (by default there are two drivers - dompdf and tcpdf).
 Then chain on the init() method and provide any parameters that the driver's library needs when calling a new instance. DomPDF doesn't take any input however tcpdf does (see the code under lib/tcpdf or the examples for the parameters to provide).
 
 DomPDF example:
@@ -27,7 +27,7 @@ DomPDF example:
 ````php
 <?php
 // Create an instance of the PDF class
-$pdf = \PDF::factory('dompdf')->init();
+$pdf = \Pdf::forge('dompdf')->init();
 ````
 
 TCPDF example:
@@ -35,7 +35,7 @@ TCPDF example:
 <?php
 // Create an instance of the PDF class
 // Construct takes following input: $orientation='P', $unit='mm', $format='A4', $unicode=true, $encoding='UTF-8', $diskcache=false
-$pdf = \PDF::factory('tcpdf')->init('P', 'mm', 'A4', true, 'UTF-8', false);
+$pdf = \Pdf\Pdf::forge('tcpdf')->init('P', 'mm', 'A4', true, 'UTF-8', false);
 // Of course these parameters are optional so we could just call init(). All errors are handled by the libraries themselves.
 ````
 
@@ -46,7 +46,7 @@ Now once you've initialised the class you use the libraries exactly as documente
 // Note: As explained earlier, you can camelcase functions used in the PDF classes so that
 // it feels more Fuel-like (is that a word??).
 // Normally, to add a page in TCPDF you call addPage();
-$pdf = \PDF::factory('tcpdf')->init('P', 'mm', 'A4', true, 'UTF-8', false);
+$pdf = \Pdf\Pdf::forge('tcpdf')->init('P', 'mm', 'A4', true, 'UTF-8', false);
 $pdf->add_page(); // This works.
 ````
 
@@ -106,5 +106,5 @@ Adding libraries is stupidly simple.
 
 ````php
 <?php
-$pdf = \PDF::factory('somenewpdfdriver')->init('option1', 'anotheroption');
+$pdf = \Pdf\Pdf::forge('somenewpdfdriver')->init('option1', 'anotheroption');
 ````
